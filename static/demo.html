@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Music Recommender</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../select/bootstrap-select.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Опис проекту</a></li>
+                  <li><a href="demo.html">Демо-зона</a></li>
+                  <li><a href="https://www.facebook.com/vlad.taraman.58" target="blank">Сторінка розробника</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row vdivide">
+              <div class="col-sm-6 text-center">
+                <h3>Знайти схожих за виконавцем</h3>
+                <select id='bandSelect' class="selectpicker" title="Оберіть виконавця" data-live-search="true">
+                </select>
+
+                <br>&nbsp;
+                <p>
+                  <input type='button' id='getSimilarBtn' class="btn btn-lg btn-default" value='Знайти схожу'>
+                </p>
+                <p>&nbsp;</p>
+                <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading">Схожі результати</div>
+
+                  <!-- List group -->
+                  <ul id='bandList' class="list-group">
+                    <li class="list-group-item">Немає результату</li>
+                  </ul>
+                </div>
+              <p>&nbsp;</p>
+              </div>
+              <div class="col-sm-6 text-center">
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><a href="#addUserTab" data-toggle="tab">Додати юзера</a></li>
+                  <li role="presentation"><a href="#checkUserTab" data-toggle="tab">Перевірити юзера</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="addUserTab" class="tab-pane active">
+                    <h3>Отримайте рекомендації на основі ваших вподобавь</h3>
+                    <select id='userSelect' class="selectpicker" multiple title="Оберіть варіанти на основі ваших вподобань" data-live-search="true">
+                    </select>
+
+                    <br>&nbsp;
+                    <p>
+                      <input type='button' id='addUserBtn' class="btn btn-lg btn-default" value='Додати юзера'>
+                    </p>
+                    <br>
+                    <div id='userResp'></div>
+                  </div>
+
+                  <div id="checkUserTab" class="tab-pane">
+                    
+                    <h3>Перевірите рекомендації юзера</h3>
+                    <form id='getUserForm'>
+                      <input id='userInput' type="text" class="form-control" placeholder="User ID">&nbsp;
+                      <p>
+                        <input type='submit' class="btn btn-lg btn-default" value='Отримати рекомендації'>
+                      </p>
+                    </form>
+                    <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                      <div class="panel-heading">Схожі результати</div>
+
+                      <!-- List group -->
+                      <ul id='userList' class="list-group">
+                        <li class="list-group-item">Немає результату</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../select/bootstrap-select.min.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
